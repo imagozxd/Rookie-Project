@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //playerAudioSource.PlayOneShot(bulletSound);
+
+
     }
     
     void FixedUpdate()
@@ -64,5 +67,11 @@ public class PlayerController : MonoBehaviour
         {           
             playerAudioSource.Stop();
         }
+    }
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        Debug.Log(context.ReadValue<Vector2>());
+        Vector2 direction = context.ReadValue<Vector2>();
+        rb.velocity = direction*moveSpeed;
     }
 }
