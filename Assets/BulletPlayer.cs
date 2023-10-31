@@ -16,18 +16,19 @@ public class BulletPlayer : MonoBehaviour
     }
 
     
-    void OnCollisionEnter2D(Collision2D collision)
-    {        
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {            
             Destroy(gameObject);
-            Destroy(collision.gameObject); 
+            Destroy(collision.gameObject);
+            Debug.Log("impacto3d");
         }
     }
 
     void Start()
-    {        
+    {
+        
         Destroy(gameObject, 3.0f);
     }
 

@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
         
         enemyMovement.PersecucionChanged += HandlePersecucionChanged;
+
+
     }
     private void Update()
     {

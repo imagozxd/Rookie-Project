@@ -6,6 +6,7 @@ public class ShootController : MonoBehaviour
 {
     public GameObject balaPrefab;
 
+    
     void Update()
     {        
         if (Input.GetButtonDown("Fire1"))
